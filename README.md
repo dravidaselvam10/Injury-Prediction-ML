@@ -11,48 +11,14 @@ Bootstrap-Based Uncertainty Analysis: Produces confidence intervals for all key 
 Policy Simulation & Decision Optimisation: Sweeps thresholds to identify operating points that minimise expected cost under given assumptions of false positive and false negative impact.
 Visualisation & Reporting: Generates summary figures such as precision–recall curves, cost curves, and calibration plots.
 
+This study ensures reproducibility and transparency through open access to all source code, preprocessing routines, and model configurations. The complete implementation— including data ingestion scripts, model training pipelines, and evaluation workflows—is publicly available at:
 To reproduce the core results presented in this work, follow these steps:
-
-Clone the repository:
-
-git clone https://github.com/dravidaselvam10/Injury-Prediction-ML.git
-
-
-Install dependencies:
-
-Using pip:
-
-pip install -r requirements.txt
-
-
-Or with Conda (if environment.yml is provided):
-
-conda env create -f environment.yml
-conda activate injury-ml-env
-
-
-Execute model training and evaluation:
-
-Run the appropriate scripts or Jupyter notebooks included in the /src and /notebooks folders.
-
-Follow dataset-specific instructions outlined in the README to ensure proper data loading and feature engineering.
-
-Validate results:
-
-Use the provided logs and notebook outputs to verify reported metrics (AUC, F1, Recall).
-
-All model parameters and random seeds (e.g., RANDOM_SEED=42) are fixed to support deterministic outcomes.
-
+1) Clone the repository: git clone https://github.com/dravida-selvam10/Injury-Prediction-ML.git
+2) Install dependencies:
+• Using pip: requirements.txt
+3) Execute model training and evaluation: Use the scripts and notebooks. Dataset-specific instructions are included in the README to ensure proper loading and preprocessing.
 The repository includes:
-
---> README.md with structured documentation
-
---> Training/evaluation notebooks for classical and deep models
-
---> Preprocessing utilities for workload harmonization
-
---> Model configuration files for reproducibility and tuning
-
---> Data documentation (feature definitions and injury label guidance)
-
-This reproducible workflow enables researchers, practitioners, and reviewers to validate the results, adapt the pipeline to new datasets, and benchmark across sports or leagues.
+• README.md: Project documentation and usage instructions
+• Notebooks: Training and evaluation for classical and deep models
+• Data Descriptions: Feature definitions and label conventions
+This reproducible framework enables practitioners and researchers to validate results, extend the pipeline to other datasets, and benchmark model performance across sports or leagues.

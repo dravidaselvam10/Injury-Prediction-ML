@@ -45,13 +45,13 @@ All model parameters and random seeds (e.g., RANDOM_SEED=42) are fixed to suppor
 
 The repository includes:
 
-🧾 README.md with structured documentation
+--> README.md with structured documentation
 
-📊 Training/evaluation notebooks for classical and deep models
+--> Training/evaluation notebooks for classical and deep models
 
-⚙ Preprocessing utilities for workload harmonization
+--> Preprocessing utilities for workload harmonization
 
-🔧 Model configuration files for reproducibility and tuning
+--> Model configuration files for reproducibility and tuning
 
 📝 Data documentation (feature definitions and injury label guidance)
 

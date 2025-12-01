@@ -1,41 +1,12 @@
-# MLBA-Injury-Prediction (Project repo)
+Overview:
+This repository contains a machine learning framework for predicting rare or high-impact events in longitudinal settings — such as athlete injury risk, equipment failure, or customer churn — where outcomes evolve over time and decisions carry asymmetric costs.
 
-This repository contains a reproducible pipeline for injury risk prediction using time-series athlete load features. It includes:
-- data generation (toy AFL dataset)
-- preprocessing & feature engineering
-- model training (Logistic Regression, Random Forest, XGBoost, BiLSTM)
-- evaluation (AUC-ROC, AUC-PR, precision/recall/f1, calibration)
-- interpretability (SHAP)
-- artifacts saved to `outputs/`.
+The pipeline demonstrates how to transition from raw time-stamped data to actionable probabilistic forecasts that can inform real-world interventions. It integrates temporal validation, robust metrics for imbalanced data, and a cost-sensitive decision simulation that bridges the gap between predictive performance and business or operational value.
 
-## Quick start
-
-1. Create a virtual environment and install dependencies:
-```bash
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-```
-
-2. Generate toy data:
-```bash
-python toy_data/generate_toy_data.py
-```
-
-3. Run experiment end-to-end:
-```bash
-python src/train.py --config configs/config.yaml
-```
-
-4. Evaluate:
-```bash
-python src/evaluate.py --config configs/config.yaml
-```
-
-Outputs (models, plots) appear in `outputs/`.
-
-See `src/` for all code.
-
-## Notes
-- This pipeline uses time-based splits to avoid leakage.
-- The toy data is synthetic for reproducibility; replace `toy_data/toy_afl.csv` with your club data (same schema) for real experiments.
+Workflow Summary:
+Data Ingestion & Preprocessing: Reads structured time-series data (e.g., session, week, or day-level), Handling missing values, categorical encodings, and sorting by entity and timestamp.
+Temporal Data Splitting: Generates multiple rolling windows (train/validation/test) that move chronologically through time.
+Model Training & Evaluation: Trains candidate models on each window, computing key metrics (PR-AUC, ROC-AUC, recall@precision) and compares against naïve temporal baselines.
+Bootstrap-Based Uncertainty Analysis: Produces confidence intervals for all key metrics via stratified resampling.
+Policy Simulation & Decision Optimisation: Sweeps thresholds to identify operating points that minimise expected cost under given assumptions of false positive and false negative impact.
+Visualisation & Reporting: Generates summary figures such as precision–recall curves, cost curves, and calibration plots.

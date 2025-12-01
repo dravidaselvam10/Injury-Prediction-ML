@@ -53,6 +53,6 @@ The repository includes:
 
 --> Model configuration files for reproducibility and tuning
 
-📝 Data documentation (feature definitions and injury label guidance)
+--> Data documentation (feature definitions and injury label guidance)
 
 This reproducible workflow enables researchers, practitioners, and reviewers to validate the results, adapt the pipeline to new datasets, and benchmark across sports or leagues.
